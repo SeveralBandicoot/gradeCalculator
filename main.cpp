@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -15,20 +16,25 @@ void currentGrade() {
     // output current grade to user based off information given
 
     string assignmentType = ""; 
+    //double assignmentWeight;
     //int assignments[assignmentType];
-    vector<string> assignmentsList;
+    map<string, double> assignmentsList;
     // 1 
     cout << "Enter the assignment types within your course (type e to exit): " << endl; 
-    while (assignmentType != "e") {
+    /*while (assignmentType != "e") {
         cin >> assignmentType; 
         assignmentsList.push_back(assignmentType);
-    }
+    }*/
 
-    cout << "-------------" << endl; 
+    /*cout << "Insert the assignment weight for each assignment entered: " << endl; 
 
     for (size_t i = 0; i < assignmentsList.size(); i++) {
         cout << assignmentsList[i] << endl; 
-    }
+    }*/
+
+    /*for (size_t i = 0; i < assignmentsList.size(); i++) {
+
+    }*/
     
     // 2
     
