@@ -33,4 +33,6 @@ int main() {
     if 1 is input, run currentGrade on main. 
     */ 
    currentGrade();
+   
+   return 0; 
 }
