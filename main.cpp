@@ -15,16 +15,37 @@ void currentGrade() {
 
     // output current grade to user based off information given
 
-    string assignmentType = ""; 
+    string assignmentTypeInput = ""; 
+    double assignmentWeightsInput; 
     //double assignmentWeight;
     //int assignments[assignmentType];
     map<string, double> assignmentsList;
+
+    vector<string> assignmentTypes; // keys  
+    vector<double> assignmentWeights; // values 
     // 1 
-    cout << "Enter the assignment types within your course (type e to exit): " << endl; 
-    /*while (assignmentType != "e") {
-        cin >> assignmentType; 
-        assignmentsList.push_back(assignmentType);
-    }*/
+
+    while (assignmentTypeInput != "e") { // while the user input for assignment type is not 'e'
+        // assignment types 
+        cout << "Insert the assignment type (type e to exit): " << endl;
+        cin >> assignmentTypeInput; // insert input for assignment type 
+
+        if (assignmentTypeInput == "e") {
+            break; 
+        }
+
+        assignmentTypes.push_back(assignmentTypeInput); // push back input into assignmentTypes vector 
+        // assignment weights
+        cout << "Insert it's equivalent weight (include decimals): " << endl; 
+        cin >> assignmentWeightsInput; // insert input for assignment weights 
+        assignmentWeights.push_back(assignmentWeightsInput); // push back input into assignmentWeights vector
+    }
+
+    cout << "-----------------" << endl; 
+
+    for (int i = 0; i < assignmentTypes.size(); i++) {
+        cout << assignmentTypes[i] << ": " << assignmentWeights[i] << endl;
+    }
 
     /*cout << "Insert the assignment weight for each assignment entered: " << endl; 
 
