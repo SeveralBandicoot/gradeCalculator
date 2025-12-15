@@ -14,19 +14,29 @@ void currentGrade() {
 
     // output current grade to user based off information given
 
-    int assignmentType = 0; 
+    string assignmentType = ""; 
     //int assignments[assignmentType];
-    vector<string> assignmentsList
+    vector<string> assignmentsList;
     // 1 
-    cout << "Enter the assignment types within your course: " << endl; 
-    cin >> assignmentType; 
+    cout << "Enter the assignment types within your course (type e to exit): " << endl; 
+    while (assignmentType != "e") {
+        cin >> assignmentType; 
+        assignmentsList.push_back(assignmentType);
+    }
+
+    cout << "-------------" << endl; 
+
+    for (size_t i = 0; i < assignmentsList.size(); i++) {
+        cout << assignmentsList[i] << endl; 
+    }
+    
     // 2
     
     /*for (int i = 0; i <= assignments.size(); i++) { // 
         cout << "hello" << endl; 
     }*/
 
-    cout << "here" << endl; 
+    //cout << "here" << endl; 
 }
 
 int main() {
