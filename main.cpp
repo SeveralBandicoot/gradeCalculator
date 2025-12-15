@@ -1,9 +1,10 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 void currentGrade() {
-    // 1 - ask user for the number of different assignment types included in course (homeworks, quizzes, exams, etc.) (sort by name)
+    // 1 - ask user the different assignment types included in course (homeworks, quizzes, exams, etc.) (sort by name)
     // 2 - for however many the user inputs, loop through one by one and ask the user to input the weight of each assigment type
     // 3 - ask the user how many of each assignment type are within the course
     
@@ -14,15 +15,16 @@ void currentGrade() {
     // output current grade to user based off information given
 
     int assignmentType = 0; 
-    int assignments[assignmentType];
+    //int assignments[assignmentType];
+    vector<string> assignmentsList
     // 1 
-    cout << "Insert the number of assignment types in your course:\n" << endl;
+    cout << "Enter the assignment types within your course: " << endl; 
     cin >> assignmentType; 
     // 2
     
-    for (int i = 0; i <= assignments.size(); i++) { // 
+    /*for (int i = 0; i <= assignments.size(); i++) { // 
         cout << "hello" << endl; 
-    }
+    }*/
 
     cout << "here" << endl; 
 }
