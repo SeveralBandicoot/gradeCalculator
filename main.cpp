@@ -14,13 +14,13 @@ void currentGrade() {
     // output current grade to user based off information given
 
     int assignmentType = 0; 
-    //int assignments[assignmentType];
+    int assignments[assignmentType];
     // 1 
     cout << "Insert the number of assignment types in your course:\n" << endl;
-    //cin >> assignmentType; 
+    cin >> assignmentType; 
     // 2
     
-    for (int i = 0; i <= 2; i++) { // 
+    for (int i = 0; i <= assignments.size(); i++) { // 
         cout << "hello" << endl; 
     }
 
