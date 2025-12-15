@@ -17,7 +17,7 @@ void currentGrade() {
     //int assignments[assignmentType];
     // 1 
     cout << "Insert the number of assignment types in your course:\n" << endl;
-    cin >> assignmentType; 
+    //cin >> assignmentType; 
     // 2
     
     for (int i = 0; i <= 2; i++) { // 
@@ -33,6 +33,6 @@ int main() {
     if 1 is input, run currentGrade on main. 
     */ 
    currentGrade();
-   
+
    return 0; 
 }
