@@ -17,11 +17,11 @@ void currentGrade() {
     //int assignments[assignmentType];
     // 1 
     cout << "Insert the number of assignment types in your course:\n";
+    cin >> assignmentType; 
+    // 2 
     for (int i = 0; i < 2; i++) { // 
         cout << "hello" << endl; 
     }
-    cin >> assignmentType; 
-    // 2 
 }
 
 int main() {
