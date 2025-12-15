@@ -19,9 +19,10 @@ void currentGrade() {
     cout << "Insert the number of assignment types in your course:\n";
     cin >> assignmentType; 
     // 2 
-    /*for (int i = 0; i < assignments.size(); i++) { // 
+
+    for (int i = 0; i < assignments.size(); i++) { // 
         cout << "hello" << endl; 
-    }*/
+    }
 }
 
 int main() {
@@ -29,6 +30,5 @@ int main() {
     ask user if they would like generate current grade (1) or potential grade (2). 
     if 1 is input, run currentGrade on main. 
     */ 
-   cout << "Hello World" << endl; 
    currentGrade();
 }
