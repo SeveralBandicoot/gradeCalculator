@@ -16,7 +16,7 @@ void currentGrade() {
     //int assignmentType = 1; 
     //int assignments[assignmentType];
     // 1 
-    cout << "Insert the number of assignment types in your course:\n";
+    cout << "Insert the number of assignment types in your course:\n" << endl;
     cin >> assignmentType; 
     // 2
     
