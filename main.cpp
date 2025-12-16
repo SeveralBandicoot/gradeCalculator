@@ -15,14 +15,17 @@ void currentGrade() {
 
     // output current grade to user based off information given
 
+    // data variables
     string assignmentTypeInput = ""; 
+    int assignmentTypeAmount = 0; 
     double assignmentWeightsInput; 
-    //double assignmentWeight;
-    //int assignments[assignmentType];
-    map<string, double> assignmentsList;
 
-    vector<string> assignmentTypes; // keys  
-    vector<double> assignmentWeights; // values 
+    map<string, double> assignmentsList;
+    // data lists
+    vector<string> assignmentTypesList; // keys  
+    vector<int> assignmentTypeAmountList; // amount of assignments per type in the course
+    vector<double> gradesByCatList; 
+    vector<double> assignmentWeightsList; // values 
     // 1 
 
     while (assignmentTypeInput != "e") { // while the user input for assignment type is not 'e'
@@ -30,21 +33,53 @@ void currentGrade() {
         cout << "Insert the assignment type (type e to exit): " << endl;
         cin >> assignmentTypeInput; // insert input for assignment type 
 
-        if (assignmentTypeInput == "e") {
+        if (assignmentTypeInput == "e") { // if user input is 'e', break out of loop 
             break; 
         }
 
-        assignmentTypes.push_back(assignmentTypeInput); // push back input into assignmentTypes vector 
+        assignmentTypesList.push_back(assignmentTypeInput); // push back input into assignmentTypes vector 
         // assignment weights
-        cout << "Insert it's equivalent weight (include decimals): " << endl; 
+        cout << "Insert it's equivalent weight (in percentages): " << endl; 
         cin >> assignmentWeightsInput; // insert input for assignment weights 
-        assignmentWeights.push_back(assignmentWeightsInput); // push back input into assignmentWeights vector
+        assignmentWeightsList.push_back(assignmentWeightsInput); // push back input into assignmentWeights vector
     }
 
     cout << "-----------------" << endl; 
 
-    for (int i = 0; i < assignmentTypes.size(); i++) {
-        cout << assignmentTypes[i] << ": " << assignmentWeights[i] << endl;
+    // 3 - ask the user how many of each assignment have been done so far 
+    for (int i = 0; i < assignmentTypesList.size(); i++) {
+        cout << "How many " << assignmentTypesList[i] << "\'s have been done so far in this course: "; 
+        cin >> assignmentTypeAmount; 
+        assignmentTypeAmountList.push_back(assignmentTypeAmount);
+    }
+    // for each assignment type, ask what grade they got (ex. 20/20, 12/20, etc.) - run another function written to calculate based off input 
+    for (int i = 0; i < assignmentTypesList.size(); i++) {
+        double actualPoints = 0; // the points earned 
+        double totalPoints = 0; // total possible points 
+        double gradePerCat = 0.0; 
+        
+        double input; 
+        
+        cout << "For " << assignmentTypesList[i] << "\'s..." << endl; 
+        for (int j = 0; j < assignmentTypeAmountList[i]; j++) {
+            cout << "What was the total possible points for " << assignmentTypesList[i] << j << ": " << endl; 
+            cin >> input; 
+            totalPoints += input; // add on the input into totalPoints 
+
+            cout << "What was the points earned for " << assignmentTypesList[i] << j << ": " << endl; 
+            cin >> input;
+            actualPoints += input; // add on the input into actualPoints
+        }
+        gradePerCat = assignmentWeightsList[i] * actualPoints / totalPoints; // calculate the i'th catagory's grade
+        gradesByCatList.push_back(gradePerCat); 
+    }
+
+    cout << "-----------------" << endl; 
+    
+    
+
+    for (int i = 0; i < gradesByCatList.size(); i++) {
+        cout << gradesByCatList[i] << endl; 
     }
 
     /*cout << "Insert the assignment weight for each assignment entered: " << endl; 
