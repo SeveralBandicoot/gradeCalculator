@@ -18,6 +18,10 @@ void currentGrade() {
     // data variables
     string assignmentTypeInput = ""; 
     int assignmentTypeAmount = 0; 
+
+    double weightedSum = 0.0; 
+    double totalWeight = 0.0; 
+    double sumOfGrades = 0; 
     double assignmentWeightsInput; 
 
     map<string, double> assignmentsList;
@@ -25,6 +29,7 @@ void currentGrade() {
     vector<string> assignmentTypesList; // keys  
     vector<int> assignmentTypeAmountList; // amount of assignments per type in the course
     vector<double> gradesByCatList; 
+    vector<double> gradesSum; 
     vector<double> assignmentWeightsList; // values 
     // 1 
 
@@ -58,7 +63,11 @@ void currentGrade() {
         double totalPoints = 0; // total possible points 
         double gradePerCat = 0.0; 
         
+        
         double input; 
+        double gradeInput;
+
+        vector<double> grades; 
         
         cout << "For " << assignmentTypesList[i] << "\'s..." << endl; 
         for (int j = 0; j < assignmentTypeAmountList[i]; j++) {
@@ -69,36 +78,21 @@ void currentGrade() {
             cout << "What was the points earned for " << assignmentTypesList[i] << j << ": " << endl; 
             cin >> input;
             actualPoints += input; // add on the input into actualPoints
+
+            gradeInput = actualPoints / totalPoints; // calculate grade
+            gradesByCatList.push_back(gradeInput);
         }
-        gradePerCat = assignmentWeightsList[i] * actualPoints / totalPoints; // calculate the i'th catagory's grade
-        gradesByCatList.push_back(gradePerCat); 
+        weightedSum += gradesByCatList[i] * assignmentWeightsList[i]; 
+        totalWeight += assignmentWeightsList[i];
+        /*gradePerCat = assignmentWeightsList[i] * actualPoints / totalPoints; // calculate the i'th catagory's grade
+        gradesByCatList.push_back(gradePerCat); */
     }
 
     cout << "-----------------" << endl; 
+
+    double finalGrade = weightedSum / totalWeight;
     
-    
-
-    for (int i = 0; i < gradesByCatList.size(); i++) {
-        cout << gradesByCatList[i] << endl; 
-    }
-
-    /*cout << "Insert the assignment weight for each assignment entered: " << endl; 
-
-    for (size_t i = 0; i < assignmentsList.size(); i++) {
-        cout << assignmentsList[i] << endl; 
-    }*/
-
-    /*for (size_t i = 0; i < assignmentsList.size(); i++) {
-
-    }*/
-    
-    // 2
-    
-    /*for (int i = 0; i <= assignments.size(); i++) { // 
-        cout << "hello" << endl; 
-    }*/
-
-    //cout << "here" << endl; 
+    cout << "Total Grade: " << finalGrade * 100 << "%" << endl; 
 }
 
 int main() {
