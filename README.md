@@ -39,10 +39,10 @@ Implemented input loops — Used a while loop for open-ended category entry and 
 ### Demo Video
 
 ### How to Run
-`# Compile`
-`g++ -o grade_calculator main.cpp`
-`# Run`
-`./grade_calculator`
+`# Compile`\
+`g++ -o grade_calculator main.cpp`\
+`# Run`\
+`./grade_calculator`\
 Then follow the on-screen prompts to enter your course's grading structure and scores. 
 
 ### Future Improvements
