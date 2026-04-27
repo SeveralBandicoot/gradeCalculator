@@ -48,6 +48,7 @@ https://github.com/user-attachments/assets/c2b426f3-c6b1-4b00-8a38-811ef734cec7
 Then follow the on-screen prompts to enter your course's grading structure and scores. 
 
 ### Future Improvements
+- Add "gaurdrails" to prevent unrealistic grade calculations
 - Add a potential grade calculator mode (already scaffolded in main())
 - Support letter grade output (A/B/C/D/F) alongside percentage
 - Allow users to save and load grade data from a file
