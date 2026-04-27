@@ -19,22 +19,22 @@ This project was built using C++ with the standard library only — no external 
 - Version Control: Git/GitHub
 
 ### Core Concepts Used
-- std::vector for dynamic storage of assignment types, weights, amounts, and scores
+- `std::vector` for dynamic storage of assignment types, weights, amounts, and scores
 - Nested for loops to iterate over categories and individual assignments
-- Weighted average formula: finalGrade = weightedSum / totalWeight
+- Weighted average formula: `finalGrade = weightedSum / totalWeight`
 - A while loop with a sentinel value ("e") for user-controlled input exit
 
 ### Steps Taken
-1. Planned the logic — Outlined the three-phase user flow (setup → frequency → scores) before writing any code.
+1. Planned the logic — Outlined the three-phase user flow `(setup → frequency → scores)` before writing any code.
 2. Built the data structures — Used parallel vectors to store assignment types, weights, counts, and grades by category.
 Implemented input loops — Used a while loop for open-ended category entry and for loops for structured score entry.
 3. Calculated the weighted grade — Applied weighted sum divided by total weight to handle non-uniform category weights.
 4. Tested edge cases — Verified behavior for single-category courses, all-zero scores, and unequal weights.
 
 ### Bugs Fixed
-- Off-by-one in score prompt: The score prompt for individual assignments originally displayed assignmentTypesList[j] with index j (0-based), which printed quiz 0 instead of quiz 1. Fixed by using j + 1 in the display string.
-- Grade accumulation bug: gradesByCatList was being populated inside the inner loop but indexed by i (the outer loop index) when computing the weighted sum. Resolved by computing the category average directly from actualPoints / totalPoints rather than reading back from the list.
-- Incorrect weighted average: Initially the program summed grades without dividing by total weight, causing incorrect results when weights didn't add up to 100. Fixed by dividing weightedSum by totalWeight.
+- Off-by-one in score prompt: The score prompt for individual assignments originally displayed `assignmentTypesList[j]` with index `j` (0-based), which printed quiz 0 instead of quiz 1. Fixed by using `j + 1` in the display string.
+- Grade accumulation bug: `gradesByCatList` was being populated inside the inner loop but indexed by `i` (the outer loop index) when computing the weighted sum. Resolved by computing the category average directly from `actualPoints / totalPoints` rather than reading back from the list.
+- Incorrect weighted average: Initially the program summed grades without dividing by total weight, causing incorrect results when weights didn't add up to 100. Fixed by dividing `weightedSum` by `totalWeight`.
 
 ### Demo Video
 
