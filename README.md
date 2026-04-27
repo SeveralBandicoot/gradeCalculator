@@ -38,6 +38,8 @@ Implemented input loops — Used a while loop for open-ended category entry and 
 
 ### Demo Video
 
+https://github.com/user-attachments/assets/c2b426f3-c6b1-4b00-8a38-811ef734cec7
+
 ### How to Run
 `# Compile`\
 `g++ -o grade_calculator main.cpp`\
